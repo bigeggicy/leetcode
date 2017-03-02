@@ -1,4 +1,3 @@
-import javax.naming.ldap.HasControls;
 import java.util.HashMap;
 
 /**
@@ -23,14 +22,36 @@ public class T1 {
             return new int[2];
         }
 
-    public static int lengthOfLongestSubstring(String s) {
-
+    public static String longestPalindrome(String s) {
+            int start=0,end=0;
+        int n=s.length();
+        int len=0;
+        if(n<=1)return s;
+        for(int i=0;i<n-1;i++){
+            int len1=isPalindrome(s,i,i);
+            int len2=isPalindrome(s,i,i+1);
+            int temp=Math.max(len1,len2);
+            if(temp>len){
+                len=temp;
+                start=i-(len-1)/2;
+                end=i+len/2;
+            }
+        }
+        return s.substring(start,end);
     }
+
+
+    public static int  isPalindrome(String s, int begin, int end){
+        while(begin<end&&(s.charAt(begin++)==s.charAt(end--))){
+        }
+        return end-begin-1;
+    }
+
 
 
     public static void main(String args[]){
             int[] a={1,2,3};
-           System.out.print(twoSum(a,4)[1]);
+           System.out.print(longestPalindrome("babad"));
        }
 
 }
