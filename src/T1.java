@@ -1,4 +1,7 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * User: bigegg.
@@ -48,6 +51,14 @@ public class T1 {
     }
 
 
+
+    public static int  a(int b){
+        Integer[] a={1,2,3};
+        List<Integer> a1= Arrays.asList(a);
+        Collections.reverse(a1);  //no thanks 可是我也知道了啊
+        return 1;
+
+    }
 
     public static void main(String args[]){
             int[] a={1,2,3};
